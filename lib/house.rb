@@ -13,4 +13,8 @@ class House
     # require 'pry'; binding.pry
     @price.tr('$', '').to_i
   end
+
+  def add_room(room)
+    @rooms << room
+  end
 end
