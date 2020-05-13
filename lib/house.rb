@@ -10,7 +10,7 @@ class House
   end
 
   def price
-    # require 'pry'; binding.pry
+
     @price.tr('$', '').to_i
   end
 

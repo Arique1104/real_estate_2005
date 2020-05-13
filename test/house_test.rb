@@ -24,6 +24,8 @@ class HouseTest < Minitest::Test
     assert_equal [], @house.rooms
     assert_equal [@room_1], @house.add_room(@room_1)
     assert_equal [@room_1, @room_2], @house.add_room(@room_2)
+# require 'pry'; binding.pry
+    assert_equal [@room_1, @room_2], @house.rooms
   end
 
 end
