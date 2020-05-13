@@ -3,6 +3,11 @@ require 'minitest/pride'
 require './lib/room'
 
 class RoomTest < Minitest::Test
+  def setup
+    @room1 = Room.new(:bedroom, 10, '13')
+    @room2 = Room.new(:living_room, 15, '12')
+  end
+
   def test_it_exists
     room = Room.new(:bedroom, 10, '13')
     assert_instance_of Room, room
@@ -15,10 +20,10 @@ class RoomTest < Minitest::Test
   end
 
   def test_it_can_get_area
-    skip
-    room1 = Room.new(:bedroom, 10, '13')
-    room2 = Room.new(:living_room, 15, '12')
-    assert_equal 130, room1.area
-    assert_equal 180, room2.area
+    # skip
+    #def initialize(category, length, width)
+
+    assert_equal 130, @room1.area
+    assert_equal 180, @room2.area
   end
 end
