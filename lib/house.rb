@@ -6,6 +6,9 @@ class House
 
   def initialize(price, address)
     @price = price.tr('$', '').to_i
+    #overview w/ instructors
+    #@price = price[1..-1].to_i
+    # this is dynamic testing
     @address = address
     @rooms = []
   end
@@ -15,27 +18,21 @@ class House
   end
 
   def above_market_average?
-    if @price < 400001
-      false
-    end
+    @price > 500000
   end
 
-#   def rooms_from_category(category)
-#     @rooms.each do |room|
-#       room.category
-#     # new_category_search = []
-#     #     @rooms.each do |room|
-#     #         new_category_search << if room.category == category
-#           # end
-#
-# require 'pry'; binding.pry
-#
-#
-#   end
-    def rooms
-      @rooms.each do ||
-
+  def rooms_from_category(category)
+    categories_of_house = []
+    @rooms.each do |room|
+      if room.category == category
+        categories_of_house << room
+      end
     end
+    categories_of_house
+    # require 'pry'; binding.pry
+
+  end
+
     def area
         @house.rooms.length *
         @house.rooms.width
